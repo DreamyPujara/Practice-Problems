@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define for0(i, n) for (int i = 0; i < n; i++)
+#define for1(i, n) for (int i = 1; i <= n; i++)
+#define loop(i,a,b) for (int i = a; i < b; i++)
+#define bloop(i,a,b) for (int i = a ; i>=b;i--)
+#define debug1(x) cout<<#x<<" : "<<x<<endl;
+#define debug2(x,y) cout<<#x<<" : "<<x<<"\t"<<#y<<" : "<<y<<endl;
+#define debug3(x,y,z) cout<<#x<<" : "<<x<<"\t"<<#y<<" : "<<y<<"\t"<<#z<<" : "<<z<<endl;
+#define debug4(x,y,z,w) cout<<#x<<" : "<<x<<"\t"<<#y<<" : "<<y<<"\t"<<#z<<" : "<<z<<"\t"<<#w<<" : "<<w<<endl;
+#define pairs pair<ll,ll>
+#define endl "\n"
+#define mod 1000000007
+#define MOD 998244353 
+const int N = 100001;
+
+
+ 
+void solve(){
+    ll n;
+    cin>>n;
+    vector<ll> v(n);
+    for0(i,n){
+        cin>>v[i];
+    }
+    ll pre=0;
+    ll ans=0;
+    for0(i,n){
+        if(v[i]>=(i+1)){
+            ans+=(pre+1);
+            pre=pre+1;
+        }
+        else{
+            pre=0;
+        }
+    }
+    cout<<ans<<endl;
+}
+
+int main()
+{
+    
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
+    int t=1;
+    cin>>t;
+    for1(i,t){
+        //cout<<"Case #"<<i<<": ";
+            solve();
+    }
+        
+    return 0;
+}
